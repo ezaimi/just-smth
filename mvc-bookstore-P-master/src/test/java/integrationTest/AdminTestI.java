@@ -80,31 +80,6 @@ class AdminTestI {
         return books;
     }
 
-    ///////////Klea//////////////
-
-//    @Test
-//    public void testGetSalaries() {
-//        FixLibrariansController.InstantiateLibrarians();
-//        AdminFuncController.InstantiateManagers();
-//        //AdminFuncController.InstantiateAdmins();
-//
-//        double expected = 0;
-//
-//        for (LibrarianModel librarian : ManagerModel.getLibrarians()) {
-//            expected += librarian.getSalary();
-//        }
-//
-//        for (ManagerModel manager : AdministratorModel.getManagers()) {
-//            expected += manager.getSalary();
-//        }
-//
-////        for (Administrator admin : Administrator.getAdmins()) {
-////            expected += admin.getSalary();
-////        }
-//
-//        double actual = AdminFuncController.getSalaries();
-//        assertEquals(expected, actual);
-//    }
 
     @Test
     public void testSalary(){
@@ -123,7 +98,7 @@ class AdminTestI {
             System.out.println(salary);
         }
 
-//
+
         ManagerModel mag =new ManagerModel("Alfie123","SSU6umwt","Alfie",500,"(912) 921-2728","aflie@librarian.com");
         AdministratorModel.getManagers().add(mag);
         for (int i=0;i<AdministratorModel.getManagers().size();i++) {
@@ -167,42 +142,29 @@ class AdminTestI {
 
     @Test
     public void testAddManager() {
-        // Create a new Manager object
         ManagerModel newManager = new ManagerModel("NewManager", "NewPassword", "NewName", 1000, "(123) 456-7890", "new@example.com");
-
-        // Instantiate Managers (Mock data)
         AdministratorModel.InstantiateManagers();
 
-        // Get the size of the managers list before adding the new manager
         int initialSize = AdministratorModel.getManagers().size();
 
-        // Add the new manager
         AdministratorModel.AddManager(newManager);
 
-        // Get the updated size of the managers list
         int updatedSize = AdministratorModel.getManagers().size();
 
-        // Check if the size has increased by one after adding the manager
         assertEquals(initialSize + 1, updatedSize);
-
-        // Check if the new manager is present in the managers list
         assertTrue(AdministratorModel.getManagers().contains(newManager));
 
     }
 
     @Test
     public void testManagerChecker() {
-        // Create an instance of Administrator
         AdministratorModel administrator = new AdministratorModel("adminUsername", "adminPassword");
 
-        // Create some test data
         AdministratorModel.InstantiateManagers();
 
-        // Verify valid manager credentials
         assertTrue(AdminFuncController.ManagerChecker(new ManagerModel("Calv1n", "PQ532Ayba")));
         assertTrue(AdminFuncController.ManagerChecker(new ManagerModel("Lui54", "y@.3FYrn")));
 
-        // Verify invalid manager credentials
         assertFalse(AdminFuncController.ManagerChecker(new ManagerModel("invalidUser", "invalidPassword")));
         assertFalse(AdminFuncController.ManagerChecker(new ManagerModel("Calv1n", "invalidPassword")));
         assertFalse(AdminFuncController.ManagerChecker(new ManagerModel("invalidUser", "PQ532Ayba")));
@@ -210,23 +172,18 @@ class AdminTestI {
 
     @Test
     void testManagerCheckerInvalid() {
-        // Create a Manager object with invalid credentials
         ManagerModel invalidManager = new ManagerModel("invalid", "password");
 
-        // Check if the ManagerChecker method returns false for invalid credentials
         assertFalse(AdminFuncController.ManagerChecker(invalidManager));
     }
 
     @Test
     public void testChecker() {
-        // Create some test data
         AdminFuncController.InstantiateManagers();
 
-        // Verify valid credentials
         assertTrue(AdminFuncController.checker("J0sh", "&zsX6QVZ"));
         assertTrue(AdminFuncController.checker("1", "3"));
 
-        // Verify invalid credentials
         assertFalse(AdminFuncController.checker("invalidUser", "invalidPassword"));
         assertFalse(AdminFuncController.checker("J0sh", "invalidPassword"));
         assertFalse(AdminFuncController.checker("invalidUser", "&zsX6QVZ"));

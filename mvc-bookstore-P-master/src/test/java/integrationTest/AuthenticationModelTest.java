@@ -21,7 +21,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateLibrarianWithValidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with valid librarian credentials
         assertTrue(authenticationModel.authenticateLibrarian(VALID_LIBRARIAN_USERNAME, VALID_LIBRARIAN_PASSWORD));
     }
 
@@ -29,7 +28,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateLibrarianWithInvalidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with invalid librarian credentials
         assertFalse(authenticationModel.authenticateLibrarian(INVALID_USERNAME, INVALID_PASSWORD));
     }
 
@@ -37,7 +35,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateManagerWithValidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with valid manager credentials
         assertTrue(authenticationModel.authenticateManager(VALID_MANAGER_USERNAME, VALID_MANAGER_PASSWORD));
     }
 
@@ -45,7 +42,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateManagerWithInvalidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with invalid manager credentials
         assertFalse(authenticationModel.authenticateManager(INVALID_USERNAME, INVALID_PASSWORD));
     }
 
@@ -53,7 +49,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateAdminWithValidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with valid admin credentials
         assertTrue(authenticationModel.authenticateAdmin(VALID_ADMIN_USERNAME, VALID_ADMIN_PASSWORD));
     }
 
@@ -61,7 +56,6 @@ public class AuthenticationModelTest {
     public void testAuthenticateAdminWithInvalidCredentials() {
         AuthenticationModel authenticationModel = new AuthenticationModel();
 
-        // Test with invalid admin credentials
         assertFalse(authenticationModel.authenticateAdmin(INVALID_USERNAME, INVALID_PASSWORD));
     }
 

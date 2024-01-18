@@ -51,7 +51,6 @@ public class StatsTest extends ApplicationTest {
         mainController.setAuthenticationModel(mockModel);
 
 
-
         clickOn(mainView.getUsername()).write(validManagerUsername);
         Thread.sleep(1000);
         clickOn(mainView.getPassword()).write(validManagerPassword);

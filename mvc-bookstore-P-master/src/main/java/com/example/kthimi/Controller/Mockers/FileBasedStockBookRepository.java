@@ -28,7 +28,6 @@ public class FileBasedStockBookRepository implements StockBookRepository{
             e.printStackTrace();
         }
         System.out.println("TekStockmeth" + stockBooks);
-        System.out.println("SDUHET ME U PRINTUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
 
         return stockBooks;
 
