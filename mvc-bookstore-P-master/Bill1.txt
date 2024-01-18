@@ -1,0 +1,3 @@
+Title: "great", Quantities: 1, OriginalPrice 23.0, Price: 23.0
+
+Total price: 23.0 Date: Sun Jan 14 20:47:30 CET 2024
